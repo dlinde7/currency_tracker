@@ -1,128 +1,162 @@
---- 
-components: 
-  schemas: 
-    Currency: 
-      additionalProperties: false
-      properties: 
-        date: 
-          format: date-time
-          type: string
-        details: 
-          $ref: "#/components/schemas/CurrencyDetail"
-        pretty: 
-          nullable: true
-          readOnly: true
-          type: string
-        value: 
-          format: double
-          type: number
-      type: object
-    CurrencyDetail: 
-      additionalProperties: false
-      properties: 
-        isVirtual: 
-          type: boolean
-        iso: 
-          nullable: true
-          type: string
-        name: 
-          nullable: true
-          type: string
-        symbol: 
-          nullable: true
-          type: string
-      type: object
-info: 
+openapi: 3.0.1
+info:
   title: currency_tracker
   version: v1
-openapi: "3.0.1"
-paths: 
-  /Currency: 
-    get: 
-      parameters: 
-        - 
-          in: query
-          name: iso
-          schema: 
-            nullable: true
-            type: string
-      responses: 
-        ? "200"
-        : 
-          content: 
-            application/json: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
-            text/json: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
-            text/plain: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
-          description: Success
-      tags: 
+paths:
+  /Currency:
+    get:
+      tags:
         - Currency
-  /Currency/all: 
-    get: 
-      parameters: 
-        - 
+      parameters:
+        - name: iso
           in: query
-          name: iso
-          schema: 
-            nullable: true
+          schema:
             type: string
-      responses: 
-        ? "200"
-        : 
-          content: 
-            application/json: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
-            text/json: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
-            text/plain: 
-              schema: 
-                items: 
-                  $ref: "#/components/schemas/Currency"
-                type: array
+      responses:
+        '200':
           description: Success
-      tags: 
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+  /Currency/all:
+    get:
+      tags:
         - Currency
-  ? "/Currency/{iso}"
-  : 
-    get: 
-      parameters: 
-        - 
+      parameters:
+        - name: iso
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+  '/Currency/{iso}':
+    get:
+      tags:
+        - Currency
+      parameters:
+        - name: iso
           in: path
-          name: iso
           required: true
-          schema: 
-            nullable: true
+          schema:
             type: string
-      responses: 
-        ? "200"
-        : 
-          content: 
-            application/json: 
-              schema: 
-                $ref: "#/components/schemas/Currency"
-            text/json: 
-              schema: 
-                $ref: "#/components/schemas/Currency"
-            text/plain: 
-              schema: 
-                $ref: "#/components/schemas/Currency"
+      responses:
+        '200':
           description: Success
-      tags: 
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Currency'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+  '/Currency/ratio/{iso1}/{iso2}':
+    get:
+      tags:
         - Currency
+      parameters:
+        - name: iso1
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: iso2
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CurrencyRatios'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrencyRatios'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CurrencyRatios'
+components:
+  schemas:
+    Currency:
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/CurrencyDetail'
+        date:
+          type: string
+          format: date-time
+        value:
+          type: number
+          format: double
+        pretty:
+          type: string
+          nullable: true
+          readOnly: true
+      additionalProperties: false
+    CurrencyDetail:
+      type: object
+      properties:
+        iso:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        symbol:
+          type: string
+          nullable: true
+        isVirtual:
+          type: boolean
+      additionalProperties: false
+    CurrencyRatios:
+      type: object
+      properties:
+        from:
+          type: number
+          format: double
+        to:
+          type: number
+          format: double
+        ratio:
+          type: string
+          nullable: true
+        fromCurrency:
+          $ref: '#/components/schemas/Currency'
+        toCurrency:
+          $ref: '#/components/schemas/Currency'
+      additionalProperties: false
