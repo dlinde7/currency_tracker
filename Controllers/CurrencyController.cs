@@ -75,7 +75,7 @@ namespace currency_tracker.Controllers
         }
 
         [HttpGet("convert")]
-        public async Task<CurrencyRatios> GetRatio([FromQuery]string isoFrom, [FromQuery]string isoTo, double baseValue)
+        public async Task<CurrencyRatios> GetRatio([FromQuery] string isoFrom, [FromQuery] string isoTo, double baseValue)
         {
             HttpResponseMessage response = await client.GetAsync(isoFrom + ".json");
 
@@ -106,28 +106,31 @@ namespace currency_tracker.Controllers
         }
 
         [HttpGet("dailychange")]
-        public CurrencyDailyChange GetDailyChange([FromQuery]string iso)
+        public CurrencyDailyChange GetDailyChange([FromQuery] string iso)
         {
-            try
-            {
-              Models.Database.Currency row = Constants.DATABASE.SelectRow(iso);
-
-              double change = Ratio.Calculate(row.Value2, row.Value1);
-
-              return new CurrencyDailyChange
-            {
-                change = change,
-                currency = new Currency
+            if (iso != null)
+                try
                 {
-                    Value = row.Value1,
-                    Details = CurrencyDetail.GetDetails(iso)
+                    Models.Database.Currency row = Constants.DATABASE.SelectRow(iso);
+
+                    double change = Ratio.Calculate(row.Value2, row.Value1);
+
+                    return new CurrencyDailyChange
+                    {
+                        change = change,
+                        currency = new Currency
+                        {
+                            Value = row.Value1,
+                            Details = CurrencyDetail.GetDetails(iso)
+                        }
+                    };
                 }
-            };
-            }
-            catch (Exception)
-            {
-              return null;
-            }
+                catch (Exception)
+                {
+                    return null;
+                }
+            else
+                return null;
         }
     }
 }
