@@ -26,7 +26,7 @@ namespace currency_tracker.Controllers
 
         [HttpGet("")]
         [HttpGet("all")]
-        public IEnumerable<Currency> GetAll(string? iso = null)
+        public IEnumerable<Currency> GetAll(string iso = null)
         {
             List<Currency> outList = new List<Currency>();
             List<Models.Database.Currency> values = Constants.DATABASE.Select();

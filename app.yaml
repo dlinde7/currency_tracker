@@ -1,0 +1,5 @@
+runtime: aspnetcore
+env: flex
+endpoints_api_service:
+    name: currencyapi-317119.appspot.com
+    rollout_strategy: managed

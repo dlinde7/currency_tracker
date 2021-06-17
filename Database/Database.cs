@@ -23,7 +23,7 @@ namespace currency_tracker.Database
 
         public Database()
         {
-            DAILY_UPDATE ??= Task.Run(() =>
+            DAILY_UPDATE = DAILY_UPDATE ?? Task.Run(() =>
             {
                 DateTime temp = DateTime.Now;
                 DateTime today = new DateTime(temp.Year, temp.Month, temp.Day, 1, 0, 0, 0);
