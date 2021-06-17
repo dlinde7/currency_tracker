@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,10 @@ namespace currency_tracker
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "currency_tracker", Version = "v1" });
             });
+            services.AddMvc()
+             .AddJsonOptions(options => {
+                 options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
 ﻿using currency_tracker.Models;
+using currency_tracker.Utility;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,9 +19,9 @@ namespace currency_tracker.Controllers
             _logger = logger;
         }
 
-        [HttpGet("currencies")]
-        [HttpGet("currency/all")]
-        public IEnumerable<Currency> GetAll(string? iso)
+        [HttpGet("")]
+        [HttpGet("all")]
+        public IEnumerable<Currency> GetAll(string? iso = null)
         {
             var rng = new Random();
             if (iso == null)
@@ -28,20 +29,20 @@ namespace currency_tracker.Controllers
                 return Enumerable.Range(1, 5).Select(index => new Currency
                 {
                     Value = rng.NextDouble(),
-                    Details = CurrencyDetail.FromISO("ZAR")
+                    Details = CurrencyDetail.GetDetails("ZAR")
                 })
                 .ToArray();
             }
             else
             {
-                var temp = iso.Split(',', '|', ';',':');
                 var outList = new List<Currency>();
-                foreach (var item in temp)
+                foreach (var item in iso.Split(Constants.DELIMINATORS))
                 {
+                    var tempValue = rng.NextDouble()*100000;
                     outList.Add(new Currency
                     {
-                        Value = rng.NextDouble(),
-                        Details = CurrencyDetail.FromISO(item)
+                        Value = tempValue,
+                        Details = CurrencyDetail.GetDetails(item)
                     });
                 }
 
@@ -49,15 +50,14 @@ namespace currency_tracker.Controllers
             }
         }
 
-        [HttpGet("currencies/{iso}")]
-        [HttpGet("currency/all/{iso}")]
+        [HttpGet("{iso}")]
         public Currency Get(string iso)
         {
             var rng = new Random();
             return new Currency
             {
                 Value = rng.NextDouble(),
-                Details = CurrencyDetail.FromISO(iso)
+                Details = CurrencyDetail.GetDetails(iso)
             };
         }
     }
