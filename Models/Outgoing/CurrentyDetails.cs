@@ -9,18 +9,12 @@ namespace currency_tracker.Models
         public string ISO { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }
-        public bool IsVirtual { get; set; } = false;
+        public bool? IsVirtual { get; set; } = null;
 
         internal RegionInfo regionInfo = null;
         internal CultureInfo cultureInfo = null;
 
-        public CurrencyDetail SetName(string name)
-        {
-            this.Name = name;
-            return this;
-        }
-
-        public static CurrencyDetail GetDetails(string iso)
+        public static CurrencyDetail GetDetails(string iso, string name = null)
         {
             try
             {
@@ -63,7 +57,7 @@ namespace currency_tracker.Models
                     //detail.Symbol = detail.cultureInfo.NumberFormat.CurrencySymbol;
                 }
 
-                return CheckISO(detail, iso);
+                return CheckISO(detail, iso, name);
             }
             catch (ArgumentException)
             {
@@ -72,12 +66,12 @@ namespace currency_tracker.Models
             }
         }
 
-        private static CurrencyDetail CheckISO(CurrencyDetail detail,string iso)
+        private static CurrencyDetail CheckISO(CurrencyDetail detail,string iso, string name = null)
         {
             if (iso.ToUpper() == detail.regionInfo.ISOCurrencySymbol.ToUpper())
             {
                 detail.ISO = detail.regionInfo.ISOCurrencySymbol;
-                detail.Name = detail.regionInfo.CurrencyEnglishName;
+                detail.Name = name ?? detail.regionInfo.CurrencyEnglishName;
                 detail.Symbol = detail.regionInfo.CurrencySymbol;
             }
             else
@@ -86,7 +80,7 @@ namespace currency_tracker.Models
                 detail.regionInfo = null;
                 detail.IsVirtual = true;
                 detail.ISO = iso.ToUpper().Substring(0, Math.Min(iso.Length, 3));
-                detail.Name = iso;
+                detail.Name = name ?? iso;
                 detail.Symbol = iso.ToUpper().Substring(0, Math.Min(iso.Length, 3));
             }
             return detail;

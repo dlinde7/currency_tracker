@@ -28,19 +28,22 @@ namespace currency_tracker.Controllers
         [HttpGet("all")]
         public IEnumerable<Currency> GetAll(string? iso = null)
         {
+            List<Currency> outList = new List<Currency>();
             List<Models.Database.Currency> values = Constants.DATABASE.Select();
             if (iso == null)
             {
-                return values.ToArray().Select(value => new Currency
+                foreach (var item in values)
                 {
-                    Value = value.Value2,
-                    Details = CurrencyDetail.GetDetails(value.Iso)
-                })
-                .ToArray();
+                    outList.Add(new Currency
+                    {
+                        Value = item.Value2,
+                        Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
+                    });
+                }
+                return outList;
             }
             else
             {
-                List<Currency> outList = new List<Currency>();
                 string[] ISOs = iso.ToUpper().Split(Constants.DELIMINATORS);
                 foreach (var item in values)
                 {
@@ -48,7 +51,7 @@ namespace currency_tracker.Controllers
                         outList.Add(new Currency
                         {
                             Value = item.Value2,
-                            Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                            Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
                         });
                 }
                 return outList;
@@ -65,14 +68,14 @@ namespace currency_tracker.Controllers
                     return new Currency
                     {
                         Value = item.Value2,
-                        Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                        Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
                     };
             }
             return null;
         }
 
         [HttpGet("ratio/{iso1}/{iso2}")]
-        public async Task<CurrencyRatios> GetRatio(string iso1, string iso2)
+        public async Task<CurrencyRatios> GetRatio(string iso1, string iso2, double baseValue = 1)
         {
             HttpResponseMessage response = await client.GetAsync(iso1 + ".json");
 
@@ -88,7 +91,7 @@ namespace currency_tracker.Controllers
             {
                 From = 1,
                 To = ratio,
-                ratio = "1:" + (ratio.ToString()),
+                Ratio = "1:" + (ratio.ToString()),
                 FromCurrency = new Currency
                 {
                     Value = 1,
