@@ -36,9 +36,9 @@ namespace currency_tracker.Utility
         {
             double ratio = A / B;
 
-            if (ratio < 1){
-              return ratio - 1;
-            }
+            //if (ratio < 1){
+            //  return ratio - 1;
+            //}
 
             return ratio;
         }

@@ -26,21 +26,24 @@ namespace currency_tracker.Controllers
 
         [HttpGet("")]
         [HttpGet("all")]
-        public IEnumerable<Currency> GetAll(string? iso = null)
+        public IEnumerable<Currency> GetAll(string iso = null)
         {
+            List<Currency> outList = new List<Currency>();
             List<Models.Database.Currency> values = Constants.DATABASE.Select();
             if (iso == null)
             {
-                return values.ToArray().Select(value => new Currency
+                foreach (var item in values)
                 {
-                    Value = value.Value2,
-                    Details = CurrencyDetail.GetDetails(value.Iso)
-                })
-                .ToArray();
+                    outList.Add(new Currency
+                    {
+                        Value = item.Value2,
+                        Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
+                    });
+                }
+                return outList;
             }
             else
             {
-                List<Currency> outList = new List<Currency>();
                 string[] ISOs = iso.ToUpper().Split(Constants.DELIMINATORS);
                 foreach (var item in values)
                 {
@@ -48,7 +51,7 @@ namespace currency_tracker.Controllers
                         outList.Add(new Currency
                         {
                             Value = item.Value2,
-                            Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                            Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
                         });
                 }
                 return outList;
@@ -65,14 +68,14 @@ namespace currency_tracker.Controllers
                     return new Currency
                     {
                         Value = item.Value2,
-                        Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                        Details = CurrencyDetail.GetDetails(item.Iso, item.Name)
                     };
             }
             return null;
         }
 
         [HttpGet("convert")]
-        public async Task<CurrencyRatios> GetRatio([FromQuery]string isoFrom, [FromQuery]string isoTo, double baseValue)
+        public async Task<CurrencyRatios> GetRatio([FromQuery] string isoFrom, [FromQuery] string isoTo, double baseValue)
         {
             HttpResponseMessage response = await client.GetAsync(isoFrom + ".json");
 
@@ -88,7 +91,7 @@ namespace currency_tracker.Controllers
             {
                 From = baseValue,
                 To = from,
-                ratio = (baseValue.ToString()) + ":" + (from.ToString()),
+                Ratio = (baseValue.ToString()) + ":" + (from.ToString()),
                 FromCurrency = new Currency
                 {
                     Value = baseValue,
@@ -103,28 +106,31 @@ namespace currency_tracker.Controllers
         }
 
         [HttpGet("dailychange")]
-        public CurrencyDailyChange GetDailyChange([FromQuery]string iso)
+        public CurrencyDailyChange GetDailyChange([FromQuery] string iso)
         {
-            try
-            {
-              Models.Database.Currency row = Constants.DATABASE.SelectRow(iso);
-
-              double change = Ratio.Calculate(row.Value2, row.Value1);
-
-              return new CurrencyDailyChange
-            {
-                change = change,
-                currency = new Currency
+            if (iso != null)
+                try
                 {
-                    Value = row.Value1,
-                    Details = CurrencyDetail.GetDetails(iso)
+                    Models.Database.Currency row = Constants.DATABASE.SelectRow(iso);
+
+                    double change = Ratio.Calculate(row.Value2, row.Value1);
+
+                    return new CurrencyDailyChange
+                    {
+                        change = change,
+                        currency = new Currency
+                        {
+                            Value = row.Value1,
+                            Details = CurrencyDetail.GetDetails(iso)
+                        }
+                    };
                 }
-            };
-            }
-            catch (Exception)
-            {
-              return null;
-            }
+                catch (Exception)
+                {
+                    return null;
+                }
+            else
+                return null;
         }
     }
 }

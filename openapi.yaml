@@ -1,0 +1,158 @@
+swagger: '2.0'
+info:
+  title: Currency Tracker
+  version: v1
+host: currencyapi-317119.appspot.com
+paths:
+  /Currency:
+    get:
+      tags:
+        - Currency
+      operationId: ApiGetCurrencies
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: query
+          name: iso
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Currency'
+  /Currency/all:
+    get:
+      tags:
+        - Currency
+      operationId: ApiGetCurrencyAll
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: query
+          name: iso
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Currency'
+  '/Currency/{iso}':
+    get:
+      tags:
+        - Currency
+      operationId: ApiGetCurrencyByIso
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: path
+          name: iso
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Currency'
+  /Currency/convert:
+    get:
+      tags:
+        - Currency
+      operationId: ApiGetCurrencyConvert
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: query
+          name: isoFrom
+          type: string
+        - in: query
+          name: isoTo
+          type: string
+        - in: query
+          name: baseValue
+          type: number
+          format: double
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CurrencyRatios'
+  /Currency/dailychange:
+    get:
+      tags:
+        - Currency
+      operationId: ApiGetCurrencyDailyChange
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: query
+          name: iso
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CurrencyDailyChange'
+definitions:
+  Currency:
+    type: object
+    properties:
+      details:
+        $ref: '#/definitions/CurrencyDetail'
+      value:
+        format: double
+        type: number
+      pretty:
+        type: string
+        readOnly: true
+  CurrencyDailyChange:
+    type: object
+    properties:
+      change:
+        format: double
+        type: number
+      currency:
+        $ref: '#/definitions/Currency'
+  CurrencyDetail:
+    type: object
+    properties:
+      iso:
+        type: string
+      name:
+        type: string
+      symbol:
+        type: string
+      isVirtual:
+        type: boolean
+  CurrencyRatios:
+    type: object
+    properties:
+      from:
+        format: double
+        type: number
+      to:
+        format: double
+        type: number
+      calculatedRatio:
+        format: double
+        type: number
+        readOnly: true
+      ratio:
+        type: string
+      fromCurrency:
+        $ref: '#/definitions/Currency'
+      toCurrency:
+        $ref: '#/definitions/Currency'

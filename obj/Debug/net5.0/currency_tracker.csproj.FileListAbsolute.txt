@@ -1,6 +1,7 @@
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\appsettings.json
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.exe
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\app.yaml
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.deps.json
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.json
 C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.dev.json
@@ -38,3 +39,4 @@ C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_trac
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\ref\currency_tracker.dll
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.pdb
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.genruntimeconfig.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.csprojAssemblyReference.cache
