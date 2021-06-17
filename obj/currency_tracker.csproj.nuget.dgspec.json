@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj": {}
+    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj": {
+    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj",
+        "projectUniqueName": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
         "projectName": "currency_tracker",
-        "projectPath": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj",
-        "packagesPath": "C:\\Users\\bbdnet2330\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\obj\\",
+        "projectPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
+        "packagesPath": "/Users/peacema/.nuget/packages/",
+        "outputPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bbdnet2330\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/peacema/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -40,14 +39,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "MySql.Data": {
-              "target": "Package",
-              "version": "[8.0.25, )"
-            },
-            "MySql.Web": {
-              "target": "Package",
-              "version": "[8.0.25, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.4, )"
