@@ -1,15 +1,13 @@
 ﻿using currency_tracker.Models;
 using currency_tracker.Utility;
-using currency_tracker.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Text.Json;
-using Newtonsoft.Json.Linq;
 
 namespace currency_tracker.Controllers
 {
@@ -28,12 +26,12 @@ namespace currency_tracker.Controllers
 
         [HttpGet("")]
         [HttpGet("all")]
-        public async Task<IEnumerable<Currency>> GetAllAsync(string? iso = null)
+        public IEnumerable<Currency> GetAll(string? iso = null)
         {
+            List<Models.Database.Currency> values = Constants.DATABASE.Select();
             if (iso == null)
             {
-                await Constants.DATABASE.UpdateAsync();
-                return Constants.DATABASE.Select().ToArray().Select(value => new Currency
+                return values.ToArray().Select(value => new Currency
                 {
                     Value = value.Value2,
                     Details = CurrencyDetail.GetDetails(value.Iso)
@@ -42,14 +40,16 @@ namespace currency_tracker.Controllers
             }
             else
             {
-                var outList = new List<Currency>();
-                foreach (var item in iso.Split(Constants.DELIMINATORS))
+                List<Currency> outList = new List<Currency>();
+                string[] ISOs = iso.ToUpper().Split(Constants.DELIMINATORS);
+                foreach (var item in values)
                 {
-                    outList.Add(new Currency
-                    {
-                        Value = 1,
-                        Details = CurrencyDetail.GetDetails(item)
-                    });
+                    if (ISOs.Contains(item.Iso.ToUpper()))
+                        outList.Add(new Currency
+                        {
+                            Value = item.Value2,
+                            Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                        });
                 }
                 return outList;
             }
@@ -58,42 +58,47 @@ namespace currency_tracker.Controllers
         [HttpGet("{iso}")]
         public Currency Get(string iso)
         {
-            var rng = new Random();
-            return new Currency
+            List<Models.Database.Currency> values = Constants.DATABASE.Select();
+            foreach (var item in values)
             {
-                Value = rng.NextDouble(),
-                Details = CurrencyDetail.GetDetails(iso)
-            };
+                if (item.Iso.ToUpper()==iso.ToUpper())
+                    return new Currency
+                    {
+                        Value = item.Value2,
+                        Details = CurrencyDetail.GetDetails(item.Iso).SetName(item.Name)
+                    };
+            }
+            return null;
         }
 
         [HttpGet("ratio/{iso1}/{iso2}")]
         public async Task<CurrencyRatios> GetRatio(string iso1, string iso2)
         {
-          HttpResponseMessage response = await client.GetAsync(iso1+".json");
+            HttpResponseMessage response = await client.GetAsync(iso1 + ".json");
 
-          response.EnsureSuccessStatusCode();
+            response.EnsureSuccessStatusCode();
 
-          string jsonString = await response.Content.ReadAsStringAsync();
+            string jsonString = await response.Content.ReadAsStringAsync();
 
-          var myJObject = JObject.Parse(jsonString);
+            var myJObject = JObject.Parse(jsonString);
 
-          double ratio = myJObject.SelectToken(iso1+"."+iso2).Value<double>();
+            double ratio = myJObject.SelectToken(iso1 + "." + iso2).Value<double>();
 
-          return new CurrencyRatios
+            return new CurrencyRatios
             {
                 From = 1,
                 To = ratio,
-                ratio = "1:"+(ratio.ToString()),
+                ratio = "1:" + (ratio.ToString()),
                 FromCurrency = new Currency
-                  {
+                {
                     Value = 1,
                     Details = CurrencyDetail.GetDetails(iso1)
-                   },
+                },
                 ToCurrency = new Currency
-                  {
+                {
                     Value = ratio,
                     Details = CurrencyDetail.GetDetails(iso2)
-                  }
+                }
             };
         }
     }

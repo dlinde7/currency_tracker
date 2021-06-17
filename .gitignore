@@ -1,4 +1,7 @@
 /bin
+.fake
+.ionide
 /.vscode
 /.vs
 /obj
+.DS_Store
