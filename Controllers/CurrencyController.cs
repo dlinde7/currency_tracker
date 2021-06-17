@@ -1,5 +1,6 @@
 ﻿using currency_tracker.Models;
 using currency_tracker.Utility;
+using currency_tracker.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -29,13 +30,12 @@ namespace currency_tracker.Controllers
         [HttpGet("all")]
         public IEnumerable<Currency> GetAll(string? iso = null)
         {
-            var rng = new Random();
             if (iso == null)
             {
-                return Enumerable.Range(1, 5).Select(index => new Currency
+                return Constants.DATABASE.Select().ToArray().Select(value => new Currency
                 {
-                    Value = rng.NextDouble(),
-                    Details = CurrencyDetail.GetDetails("ZAR")
+                    Value = value.Value2,
+                    Details = CurrencyDetail.GetDetails(value.Iso)
                 })
                 .ToArray();
             }
@@ -44,14 +44,12 @@ namespace currency_tracker.Controllers
                 var outList = new List<Currency>();
                 foreach (var item in iso.Split(Constants.DELIMINATORS))
                 {
-                    var tempValue = rng.NextDouble()*100000;
                     outList.Add(new Currency
                     {
-                        Value = tempValue,
+                        Value = 1,
                         Details = CurrencyDetail.GetDetails(item)
                     });
                 }
-
                 return outList;
             }
         }

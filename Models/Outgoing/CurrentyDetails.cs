@@ -20,7 +20,6 @@ namespace currency_tracker.Models
             {
                 string simpleRegion = GetSimpleRegionISO(iso);
                 CurrencyDetail detail = new CurrencyDetail();
-
                 try
                 {
                     try
