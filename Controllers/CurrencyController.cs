@@ -75,7 +75,7 @@ namespace currency_tracker.Controllers
         }
 
         [HttpGet("ratio/{iso1}/{iso2}")]
-        public async Task<CurrencyRatios> GetRatio(string iso1, string iso2, double baseValue = 1)
+        public async Task<CurrencyRatios> GetRatio(string iso1, string iso2)
         {
             HttpResponseMessage response = await client.GetAsync(iso1 + ".json");
 
