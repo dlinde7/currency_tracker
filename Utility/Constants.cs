@@ -1,4 +1,5 @@
-﻿using System;
+﻿using currency_tracker.Database;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace currency_tracker.Utility
     {
         public const string LANGUAGE = "en";
         public static readonly char[] DELIMINATORS = { ',', ':', '|', ';', '.', '-' };
+        public static Database.Database DATABASE = new Database.Database();
     }
 }
