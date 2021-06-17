@@ -6,7 +6,7 @@ namespace currency_tracker.Models
     public class Currency
     {
         public CurrencyDetail Details { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
+        //public DateTime Date { get; set; } = DateTime.Now;
         public double Value { get; set; }
 
         public string Pretty
