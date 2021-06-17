@@ -1,1 +1,6 @@
 /bin
+.fake
+.ionide
+/.vscode
+/.vs
+/obj
