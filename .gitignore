@@ -4,3 +4,4 @@
 /.vscode
 /.vs
 /obj
+.DS_Store
