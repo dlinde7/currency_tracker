@@ -1,33 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Seanf\\vscode\\New folder\\currency_tracker\\currency_tracker.csproj": {}
+    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Seanf\\vscode\\New folder\\currency_tracker\\currency_tracker.csproj": {
+    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Seanf\\vscode\\New folder\\currency_tracker\\currency_tracker.csproj",
+        "projectUniqueName": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
         "projectName": "currency_tracker",
-        "projectPath": "C:\\Users\\Seanf\\vscode\\New folder\\currency_tracker\\currency_tracker.csproj",
-        "packagesPath": "C:\\Users\\Seanf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Seanf\\vscode\\New folder\\currency_tracker\\obj\\",
+        "projectPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
+        "packagesPath": "/Users/peacema/.nuget/packages/",
+        "outputPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Seanf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/peacema/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/Cellar/dotnet/5.0.204/libexec/sdk/5.0.204/RuntimeIdentifierGraph.json"
         }
       }
     }
