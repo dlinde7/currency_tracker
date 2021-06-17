@@ -61,7 +61,7 @@ namespace currency_tracker.Controllers
             List<Models.Database.Currency> values = Constants.DATABASE.Select();
             foreach (var item in values)
             {
-                if (item.Iso.ToUpper()==iso.ToUpper())
+                if (item.Iso.ToUpper() == iso.ToUpper())
                     return new Currency
                     {
                         Value = item.Value2,

@@ -16,8 +16,7 @@ namespace currency_tracker.Models
 
         public CurrencyDetail SetName(string name)
         {
-            if(name != null)
-                this.Name = name;
+            this.Name = name;
             return this;
         }
 
