@@ -199,5 +199,46 @@ namespace currency_tracker.Database
                 return new List<Currency>();
             }
         }
+
+        public Currency SelectRow(string iso)
+        {
+            try
+            {
+                string query = "SELECT * FROM currency WHERE iso='" + iso + "'";
+
+                if (this.OpenConnection() == true)
+                {
+
+                  Currency row = null;
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        row = new Currency(
+                            (string)dataReader["name"],
+                            (string)dataReader["iso"],
+                            (double)dataReader["value1"],
+                            (double)dataReader["value2"]
+                        );
+                    }
+
+                    dataReader.Close();
+
+                    this.CloseConnection();
+
+                    return row;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
     }
 }

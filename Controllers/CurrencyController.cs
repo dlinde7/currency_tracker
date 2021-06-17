@@ -74,10 +74,10 @@ namespace currency_tracker.Controllers
             return null;
         }
 
-        [HttpGet("ratio/{iso1}/{iso2}")]
-        public async Task<CurrencyRatios> GetRatio(string iso1, string iso2)
+        [HttpGet("convert")]
+        public async Task<CurrencyRatios> GetRatio([FromQuery]string isoFrom, [FromQuery]string isoTo, double baseValue)
         {
-            HttpResponseMessage response = await client.GetAsync(iso1 + ".json");
+            HttpResponseMessage response = await client.GetAsync(isoFrom + ".json");
 
             response.EnsureSuccessStatusCode();
 
@@ -85,24 +85,50 @@ namespace currency_tracker.Controllers
 
             var myJObject = JObject.Parse(jsonString);
 
-            double ratio = myJObject.SelectToken(iso1 + "." + iso2).Value<double>();
+            double from = myJObject.SelectToken(isoFrom + "." + isoTo).Value<double>() * baseValue;
 
             return new CurrencyRatios
             {
-                From = 1,
-                To = ratio,
-                Ratio = "1:" + (ratio.ToString()),
+                From = baseValue,
+                To = from,
+                Ratio = (baseValue.ToString()) + ":" + (from.ToString()),
                 FromCurrency = new Currency
                 {
-                    Value = 1,
-                    Details = CurrencyDetail.GetDetails(iso1)
+                    Value = baseValue,
+                    Details = CurrencyDetail.GetDetails(isoFrom)
                 },
                 ToCurrency = new Currency
                 {
-                    Value = ratio,
-                    Details = CurrencyDetail.GetDetails(iso2)
+                    Value = from,
+                    Details = CurrencyDetail.GetDetails(isoTo)
                 }
             };
         }
+
+        [HttpGet("dailychange")]
+        public CurrencyDailyChange GetDailyChange([FromQuery]string iso)
+        {
+            try
+            {
+              Models.Database.Currency row = Constants.DATABASE.SelectRow(iso);
+
+              double change = Ratio.Calculate(row.Value2, row.Value1);
+
+              return new CurrencyDailyChange
+            {
+                change = change,
+                currency = new Currency
+                {
+                    Value = row.Value1,
+                    Details = CurrencyDetail.GetDetails(iso)
+                }
+            };
+            }
+            catch (Exception)
+            {
+              return null;
+            }
+        }
     }
 }
+//

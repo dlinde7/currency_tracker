@@ -34,7 +34,13 @@ namespace currency_tracker.Utility
         /// <returns>The ratio</returns>
         public static double Calculate(double A, double B)
         {
-            return A / B;
+            double ratio = A / B;
+
+            if (ratio < 1){
+              return ratio - 1;
+            }
+
+            return ratio;
         }
     }
 }
