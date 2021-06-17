@@ -1,131 +1,41 @@
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/appsettings.Development.json
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/appsettings.json
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.exe
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.deps.json
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.runtimeconfig.json
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.runtimeconfig.dev.json
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/ref/currency_tracker.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/currency_tracker.pdb
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/Microsoft.OpenApi.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.GeneratedMSBuildEditorConfig.editorconfig
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.AssemblyInfoInputs.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.AssemblyInfo.cs
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.csproj.CoreCompileInputs.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.MvcApplicationPartsAssemblyInfo.cs
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.MvcApplicationPartsAssemblyInfo.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/staticwebassets/currency_tracker.StaticWebAssets.Manifest.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/staticwebassets/currency_tracker.StaticWebAssets.xml
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/scopedcss/bundle/currency_tracker.styles.css
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.RazorTargetAssemblyInfo.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.csproj.CopyComplete
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/ref/currency_tracker.dll
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.pdb
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.genruntimeconfig.cache
-C:/Users/Seanf/vscode/New folder/currency_tracker/obj/Debug/net5.0/currency_tracker.csproj.AssemblyReference.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/appsettings.Development.json
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/appsettings.json
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/currency_tracker.deps.json
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/currency_tracker.runtimeconfig.json
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/currency_tracker.runtimeconfig.dev.json
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/currency_tracker.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/ref/currency_tracker.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/currency_tracker.pdb
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/Microsoft.OpenApi.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.csprojAssemblyReference.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.GeneratedMSBuildEditorConfig.editorconfig
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.AssemblyInfoInputs.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.AssemblyInfo.cs
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.csproj.CoreCompileInputs.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.MvcApplicationPartsAssemblyInfo.cs
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.MvcApplicationPartsAssemblyInfo.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/staticwebassets/currency_tracker.StaticWebAssets.Manifest.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/staticwebassets/currency_tracker.StaticWebAssets.xml
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/scopedcss/bundle/currency_tracker.styles.css
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.RazorTargetAssemblyInfo.cache
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.csproj.CopyComplete
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/ref/currency_tracker.dll
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.pdb
-/Users/peacema/Documents/bbd-grad/currency_tracker/obj/Debug/net5.0/currency_tracker.genruntimeconfig.cache
-<<<<<<< HEAD
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.AssemblyReference.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfoInputs.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfo.cs
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CoreCompileInputs.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\ref\currency_tracker.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.pdb
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\appsettings.json
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.exe
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.deps.json
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.json
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.dev.json
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\ref\currency_tracker.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\currency_tracker.pdb
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\BouncyCastle.Crypto.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Google.Protobuf.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\K4os.Compression.LZ4.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\K4os.Hash.xxHash.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\MySql.Data.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Ubiety.Dns.Core.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Zstandard.Net.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\MySql.Web.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.Manifest.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.xml
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\scopedcss\bundle\currency_tracker.styles.css
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.RazorTargetAssemblyInfo.cache
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CopyComplete
-C:\Users\bbdnet2330\Documents\currency_tracker\obj\Debug\net5.0\currency_tracker.genruntimeconfig.cache
-=======
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\appsettings.json
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.exe
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.deps.json
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.json
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.dev.json
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\ref\currency_tracker.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\currency_tracker.pdb
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.AssemblyReference.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfoInputs.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfo.cs
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CoreCompileInputs.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.Manifest.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.xml
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\scopedcss\bundle\currency_tracker.styles.css
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.RazorTargetAssemblyInfo.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CopyComplete
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\ref\currency_tracker.dll
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.pdb
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\obj\Debug\net5.0\currency_tracker.genruntimeconfig.cache
-C:\Users\bbdnet2317\Desktop\Grad Program\currency_tracker\bin\Debug\net5.0\Newtonsoft.Json.dll
->>>>>>> 34f370e7505b8f949f52aa5a48d1c97384c8618b
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\appsettings.json
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.exe
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.deps.json
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.json
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.runtimeconfig.dev.json
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\ref\currency_tracker.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\currency_tracker.pdb
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\MySql.Data.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Zstandard.Net.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.csprojAssemblyReference.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfoInputs.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.AssemblyInfo.cs
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CoreCompileInputs.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.Manifest.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\staticwebassets\currency_tracker.StaticWebAssets.xml
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\scopedcss\bundle\currency_tracker.styles.css
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.RazorTargetAssemblyInfo.cache
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.CopyComplete
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\ref\currency_tracker.dll
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.pdb
+C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.genruntimeconfig.cache

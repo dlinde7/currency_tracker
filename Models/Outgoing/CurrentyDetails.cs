@@ -14,6 +14,13 @@ namespace currency_tracker.Models
         internal RegionInfo regionInfo = null;
         internal CultureInfo cultureInfo = null;
 
+        public CurrencyDetail SetName(string name)
+        {
+            if(name != null)
+                this.Name = name;
+            return this;
+        }
+
         public static CurrencyDetail GetDetails(string iso)
         {
             try
@@ -45,7 +52,7 @@ namespace currency_tracker.Models
                     //Failed to get currency details from culture
                     //try to get currency details rom region info
                     //i.e. cultureInfo(exception) && regionInfo(null)
-                    detail.regionInfo = new RegionInfo(simpleRegion.ToUpper());
+                    detail.regionInfo = new RegionInfo(Constants.LANGUAGE + "-" + simpleRegion.ToUpper());
                 }
                 catch (ArgumentException)
                 {
