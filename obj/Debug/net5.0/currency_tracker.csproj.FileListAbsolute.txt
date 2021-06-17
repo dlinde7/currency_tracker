@@ -38,4 +38,3 @@ C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_trac
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\ref\currency_tracker.dll
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.pdb
 C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.genruntimeconfig.cache
-C:\Users\Seanf\vscode\New folder\currency_tracker\obj\Debug\net5.0\currency_tracker.csproj.AssemblyReference.cache
