@@ -1,3 +1,5 @@
+using currency_tracker.Utility;
+using System;
 using System.Globalization;
 
 namespace currency_tracker.Models
@@ -9,53 +11,97 @@ namespace currency_tracker.Models
         public string Symbol { get; set; }
         public bool IsVirtual { get; set; } = false;
 
-        public static CurrencyDetail FromISO(string iso, string fallback = null)
+        internal RegionInfo regionInfo = null;
+        internal CultureInfo cultureInfo = null;
+
+        public static CurrencyDetail GetDetails(string iso)
         {
             try
             {
-                string simpleRegion = iso;
-                if (simpleRegion.Length > 2)
-                    simpleRegion = simpleRegion.ToCharArray()[0].ToString() + simpleRegion.ToCharArray()[1].ToString();
-                return FromRegion(simpleRegion, fallback);
-            }
-            catch (System.ArgumentException)
-            {
-                return new CurrencyDetail()
+                string simpleRegion = GetSimpleRegionISO(iso);
+                CurrencyDetail detail = new CurrencyDetail();
+
+                try
                 {
-                    ISO = iso,
-                    Name = fallback == null ? iso : fallback,
-                    Symbol = iso,
-                    IsVirtual = true
-                };
+                    try
+                    {
+                        //Attempts to use en-##
+                        detail.cultureInfo = new CultureInfo(Constants.LANGUAGE + "-" + simpleRegion.ToUpper());
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        //Defaults to ##-##, culture
+                        detail.cultureInfo = new CultureInfo(simpleRegion.ToLower() + "-" + simpleRegion.ToUpper());
+                    }
+                    detail.regionInfo = new RegionInfo(detail.cultureInfo.Name);
+                }
+                catch (ArgumentNullException)
+                {
+                    //return null as any attempt to do a check will throw an error
+                    //i.e. cultureInfo(exception) && regionInfo(null)
+                    return null;
+                }
+                catch (CultureNotFoundException)
+                {
+                    //Failed to get currency details from culture
+                    //try to get currency details rom region info
+                    //i.e. cultureInfo(exception) && regionInfo(null)
+                    detail.regionInfo = new RegionInfo(simpleRegion.ToUpper());
+                }
+                catch (ArgumentException)
+                {
+                    //Invalid region from culture
+                    //i.e. cultureInfo(set) && regionInfo(exception)
+                    return null;
+                    //detail.ISO = detail.cultureInfo.ThreeLetterISOLanguageName;
+                    //detail.Name = detail.cultureInfo.NativeName;
+                    //detail.Symbol = detail.cultureInfo.NumberFormat.CurrencySymbol;
+                }
+
+                return CheckISO(detail, iso);
+            }
+            catch (ArgumentException)
+            {
+                //iso parameter cannot be made upcase
+                return null;
             }
         }
 
-        public static CurrencyDetail FromRegion(string region, string fallback = null)
+        private static CurrencyDetail CheckISO(CurrencyDetail detail,string iso)
         {
-            region = region.ToUpper();
-            try
+            if (iso.ToUpper() == detail.regionInfo.ISOCurrencySymbol.ToUpper())
             {
-                //Will thrown an exception if the region is not valid
-                //see https://docs.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo.isocurrencysymbol?view=net-5.0#remarks for valid regions
-                RegionInfo regionInfo = new RegionInfo(region);
+                detail.ISO = detail.regionInfo.ISOCurrencySymbol;
+                detail.Name = detail.regionInfo.CurrencyEnglishName;
+                detail.Symbol = detail.regionInfo.CurrencySymbol;
+            }
+            else
+            {
+                detail.cultureInfo = null;
+                detail.regionInfo = null;
+                detail.IsVirtual = true;
+                detail.ISO = iso.ToUpper().Substring(0, Math.Min(iso.Length, 3));
+                detail.Name = iso;
+                detail.Symbol = iso.ToUpper().Substring(0, Math.Min(iso.Length, 3));
+            }
+            return detail;
+        }
 
-                return new CurrencyDetail()
-                {
-                    ISO = regionInfo.ISOCurrencySymbol,
-                    Name = regionInfo.CurrencyEnglishName,
-                    Symbol = regionInfo.CurrencySymbol,
-                    IsVirtual = false
-                };
-            }
-            catch (System.ArgumentNullException)
+        private static string GetSimpleRegionISO(string region)
+        {
+            return region.Substring(0, Math.Min(region.Length, 2)).ToUpper();
+        }
+
+        public static string FormatValue(double value, CurrencyDetail detail)
+        {
+            if(detail != null)
             {
-                return null;
+                if (detail.cultureInfo != null)
+                    return value.ToString("C", detail.cultureInfo.NumberFormat);
+                else
+                    return detail.ISO + " " + value.ToString("N", CultureInfo.InvariantCulture);
             }
-            catch (System.ArgumentException)
-            {
-                //the region entered was not a valid currency
-                throw;
-            }
+            return value.ToString("N", CultureInfo.InvariantCulture);
         }
     }
 }
