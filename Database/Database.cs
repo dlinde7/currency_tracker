@@ -1,7 +1,10 @@
 ﻿
 using currency_tracker.Models.Database;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace currency_tracker.Database
 {
@@ -77,21 +80,70 @@ namespace currency_tracker.Database
             }
         }
 
-        public void Update(string iso, double value1, double value2)
+        static HttpClientHandler handler = new HttpClientHandler();
+        HttpClient client = new HttpClient(handler);
+        public async Task UpdateAsync()
         {
-            string query = "UPDATE currency SET value1='" + value1 + "', value2='" + value2 + "' WHERE iso='" + iso + "'";
 
-            //Open connection
-            if (this.OpenConnection() == true)
+            client.CancelPendingRequests();
+            client.BaseAddress = new Uri("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/");
+            HttpResponseMessage response = await client.GetAsync("zar.json");
+            response.EnsureSuccessStatusCode();
+
+            Dictionary<string, string> list = new Dictionary<string, string>();
+            string jsonString = await response.Content.ReadAsStringAsync();
+            jsonString = jsonString.Split('{')[2].Replace('}', ' ').Replace('\"', ' ');
+
+            foreach (var item in jsonString.Split(','))
             {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = query;
-                cmd.Connection = connection;
+                list.Add(item.Split(':')[0].Trim(), item.Split(':')[1].Trim());
+            }
 
-                cmd.ExecuteNonQuery();
+            foreach (var item in list)
+            {
+                string query = "UPDATE currency SET value2=" + item.Value + " WHERE iso='" + item.Key + "'";
 
+                //Open connection
+                if (OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    cmd.ExecuteNonQuery();
+                }
                 this.CloseConnection();
             }
+
+            client = new HttpClient(handler);
+            client.BaseAddress = new Uri("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "/currencies/");
+            response = await client.GetAsync("zar.json");
+            response.EnsureSuccessStatusCode();
+
+            list.Clear();
+            jsonString = await response.Content.ReadAsStringAsync();
+            jsonString = jsonString.Split('{')[2].Replace('}', ' ').Replace('\"', ' ');
+
+            foreach (var item in jsonString.Split(','))
+            {
+                list.Add(item.Split(':')[0].Trim(), item.Split(':')[1].Trim());
+            }
+
+            foreach (var item in list)
+            {
+                string query = "UPDATE currency SET value1=" + item.Value + " WHERE iso='" + item.Key + "'";
+
+                //Open connection
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    cmd.ExecuteNonQuery();
+
+
+                }
+                this.CloseConnection();
+            }
+            return;
+
         }
 
         public List<Currency> Select()

@@ -28,10 +28,11 @@ namespace currency_tracker.Controllers
 
         [HttpGet("")]
         [HttpGet("all")]
-        public IEnumerable<Currency> GetAll(string? iso = null)
+        public async Task<IEnumerable<Currency>> GetAllAsync(string? iso = null)
         {
             if (iso == null)
             {
+                await Constants.DATABASE.UpdateAsync();
                 return Constants.DATABASE.Select().ToArray().Select(value => new Currency
                 {
                     Value = value.Value2,

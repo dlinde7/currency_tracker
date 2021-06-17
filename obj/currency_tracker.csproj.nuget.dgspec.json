@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {}
+    "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj": {}
   },
   "projects": {
-    "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj": {
+    "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
+        "projectUniqueName": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj",
         "projectName": "currency_tracker",
-        "projectPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/currency_tracker.csproj",
-        "packagesPath": "/Users/peacema/.nuget/packages/",
-        "outputPath": "/Users/peacema/Documents/bbd-grad/currency_tracker/obj/",
+        "projectPath": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\currency_tracker.csproj",
+        "packagesPath": "C:\\Users\\bbdnet2330\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bbdnet2330\\Documents\\currency_tracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/peacema/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bbdnet2330\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -39,9 +40,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.25, )"
+            },
+            "MySql.Web": {
+              "target": "Package",
+              "version": "[8.0.25, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
